@@ -1,31 +1,21 @@
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-    entry: './src/svg.js',
+    entry: './src/app.ts',
     output: {
-        path: __dirname + '/dist/js',
-        filename: 'svg.bundle.js'
+        path: path.resolve(__dirname, 'dist'),  
+        filename: 'bundle.js',
+        publicPath: '/dist/'
+    },
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.scss']
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
-                }
-            }
-        }]
-    },
-    plugins: [
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: 3000,
-            server: { baseDir: ['dist'] },
-            files: ['./dist/*']
-        }),
-    ],
-    watch: true,
-    devtool: 'source-map'
-};
+        loaders: [
+            // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+            { test: /\.tsx?$/, loader: 'ts-loader' },
+            { test:/\.(s*)css$/, use:['style-loader','css-loader', 'sass-loader']}
+        ]
+    }
+}

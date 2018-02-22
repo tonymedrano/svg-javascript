@@ -1,25 +1,39 @@
 {
-  "name": "canvas-template",
+  "name": "god-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
+  "description": "creating a typescript environment for God application.",
+  "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "typings install",
+    "god": "node_modules/.bin/webpack-dev-server",
+    "watch": "webpack --watch",
+    "styles": "npm-sass --watch ./css/styles.scss ./css/styles.css"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "gsap": "^1.19.1",
-    "jquery": "^3.2.1",
-    "normalize-css": "^2.3.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonymedrano/typescript-sass.git"
   },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "es2015",
+    "node"
+  ],
+  "author": "Tony Medrano <info@tonymedrano.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tonymedrano/typescript-sass.git/issues"
+  },
+  "homepage": "https://github.com/tonymedrano/typescript-sass.git#readme",
   "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.4.0",
-    "browser-sync": "^2.18.8",
-    "browser-sync-webpack-plugin": "^1.1.4",
-    "webpack": "^2.5.1"
+    "css-loader": "^0.28.9",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.1",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.6.0-dev.20170912",
+    "typings": "^2.1.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.7.1"
   }
 }
