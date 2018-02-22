@@ -1,10 +1,10 @@
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-    entry: './src/canvas.js',
+    entry: './src/svg.js',
     output: {
         path: __dirname + '/dist/js',
-        filename: 'canvas.bundle.js'
+        filename: 'svg.bundle.js'
     },
     module: {
         loaders: [{
