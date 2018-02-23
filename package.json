@@ -7,7 +7,8 @@
     "prepublish": "typings install",
     "god": "node_modules/.bin/webpack-dev-server",
     "watch": "webpack --watch",
-    "styles": "npm-sass --watch ./css/styles.scss ./css/styles.css"
+    "styles": "npm-sass --watch ./css/styles.scss ./css/styles.css",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,15 @@
   },
   "homepage": "https://github.com/tonymedrano/typescript-sass.git#readme",
   "devDependencies": {
+    "@types/jasmine": "^2.8.6",
     "css-loader": "^0.28.9",
+    "jasmine-core": "^2.99.1",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-typescript": "^3.0.12",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
