@@ -1,9 +1,9 @@
 import { SVG } from "./god-svg";
 
-export class God  {
+export class God {
     name: string;
-    constructor(){
+    constructor(canvas: any, shapes: any) {
         this.name = "God is running..."
-        SVG.create();
+        SVG.create(canvas, shapes);
     }
 }
